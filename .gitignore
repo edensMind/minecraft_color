@@ -1,0 +1,7 @@
+__pycache__/
+color.sock
+color.conf
+color.service
+color_env/
+app.ini
+wsgi.py
