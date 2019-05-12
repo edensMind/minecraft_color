@@ -1,0 +1,63 @@
+#parent {
+	margin:5px;
+}
+
+.container {
+	/*border: solid black 1px;*/
+	box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+#menu {
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top:75px;
+}
+
+#sidebar {
+	height: 900px;
+	width: 180px;
+	position: absolute;
+	top:180px;
+}
+
+#grid {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:180px;
+	left:190px;
+}
+
+
+/*------------------------------------------------------*/
+
+#grid_table {
+	padding: 5px;
+}
+
+.row {
+	margin-bottom:-3px;
+}
+
+.cell {
+	border: solid black 1px;
+	height: 17px;
+	width: 17px;
+	margin-right:-3px;
+	font-size: 10px;
+}
+
+.cell-color {
+	
+}
+
+.cell-edge {
+	border: solid white 1px;
+	text-align: center;
+}
+
+.xy_input {
+	width:25px;
+}
+

@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- HEADER -------------------------------------------------------------------->
+{% include 'header.html' %}
 
-<title>{{title}}</title>
+<!-- NAV -------------------------------------------------------------------->
+{% include 'nav.html' %}
 
-</head>
-<body>
-	<h1 style="color:green">{{title}}</h1>
-</body>
-</html>
+<!-- BODY -------------------------------------------------------------------->
+<div id="parent">
+
+	<div id="menu" class="container">
+		<h1 style="color:green">Minecraft Color</h1>
+		<label for="x_form">X:</label>
+		<input type="text" id="x_form" class=" xy_input">
+		<label for="y_form">Y:</label>
+		<input type="text" id="y_form" class=" xy_input">
+		<button id="xy_set" class="" onclick="setGridSize()">Set Grid Size</button>
+		<button id="xy_set" class="" onclick="clearGrid()">Clear Grid</button>
+	</div>
+
+	<div id="sidebar" class="container">
+		sidebar
+	</div>
+
+	<div id="grid" class="container">
+		<!-- Grid Here - set in js/grid.js -->
+	</div>
+</div>
+
+<!-- BODY END-------------------------------------------------------------------->
+
+<!-- FOOTER -------------------------------------------------------------------->
+{% include 'footer.html' %}

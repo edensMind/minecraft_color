@@ -18,13 +18,23 @@ static_path = os.path.join(project_root, './static')
 from logError import logError
 
 # DATABASE ##################################################################
-import pymongo
-import sqlite3
+from pymongo import MongoClient
+
 def dbConnect():
 	try:
-		database = 'example.db'
-		conn = sqlite3.connect(database)
-		return conn
+		address = 'localhost'
+		db_name = 'minecraftColor'
+		coll_name = 'drawings'
+
+		client = MongoClient(address, 27017)
+		db = client[db_name]
+		coll = db[coll_name]
+
+		return coll
+
+		#insert: coll.insert_one(document).inserted_id
+		#find: coll.find_one()  or,  for doc in coll.find():
+
 	except Exception as error:
 		logError("DB Connection",error)
 		return "CONN_ERROR"
@@ -32,12 +42,15 @@ def dbConnect():
 # APP ######################################################################
 @app.route("/")
 def hello():
-	title = "Flask App"
+	title = "Minecraft Color"
+
+	coll = dbConnect()
+
+	logError("DEBUG DB Connected?",str(coll))
+
 	return render_template('index.html',
 		title=title
 	)
-
-
 
 
 # END ######################################################################
