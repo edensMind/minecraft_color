@@ -184,16 +184,19 @@ def ahk():
 					# Get this cell's block type
 					this_cell_block = getBlock(this_cell[1])
 
+					#process if next block in row is the same block (more efficient)
 					next_x = 0
 					while True:
 						if x+1 >= int(max_x):
 							break
 
 						if this_cell_block == getBlock(list(jsonDataObj.items())[num_cells+1][1]):
+							logError("DEBUG AHK 9","reached")
 							next_x += 1
 							num_cells += 1
 							x += 1
 						else:
+							logError("DEBUG AHK 9","break")
 							break
 
 					# If block type is not empty...
@@ -203,7 +206,7 @@ def ahk():
 							;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 							Send, /
 							Sleep 250
-							Send, fill ~"""+str(this_cell_x)+""" ~ ~"""+str(this_cell_y)+""" ~"""+str(this_cell_x+next_x)+""" ~ ~"""+str(this_cell_y)+""" minecraft:"""+this_cell_block+"""
+							Send, fill ~"""+str(this_cell_x)+""" ~ ~"""+str(this_cell_y)+""" ~"""+str(int(this_cell_x)+next_x)+""" ~ ~"""+str(this_cell_y)+""" minecraft:"""+this_cell_block+"""
 							Send, {Enter}\n
 							"""
 				else:
