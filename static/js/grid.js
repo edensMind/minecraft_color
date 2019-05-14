@@ -54,7 +54,7 @@ function setGrid(x,y) {
 				row_num += 1;
 			}
 			else {	
-				grid_list_html += "<td><div id='x"+ix+"y"+iy+"' onclick='setColor(this)' oncontextmenu='return removeColor(this)' ondrag='setColor(this)' class='cell cell-color'></div></td>\n";
+				grid_list_html += "<td><div id='x"+ix+"y"+iy+"' onclick='setColor(this)' oncontextmenu='return removeColor(this)' ondrag='setColor(this)' class='cell cell-color'></td>\n";
 			}
 
 		}
@@ -63,12 +63,13 @@ function setGrid(x,y) {
 	}
 
 	//end html
-	grid_list_html += "<table>\n";
+	grid_list_html += "</div><table>\n";
 
 	// set grid html
 	grid_parent.innerHTML = grid_list_html;
 
 	// get grid colors
+	setDrawingDocument();
 	getDrawingDocument(x,y);
 
 
@@ -77,7 +78,7 @@ function setGrid(x,y) {
 ////////////////////////////////////////////////////////////////////////////
 function setColor(this_cell) {
 	//console.log("Setting Color: "+this_cell.id);
-	this_cell.style.backgroundColor = "red";
+	this_cell.style.backgroundColor = "rgb("+selectedColor+")";
 
 	setDrawingDocument();
 }

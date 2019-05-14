@@ -27,6 +27,7 @@
 	position: absolute;
 	top:180px;
 	left:190px;
+
 }
 
 
@@ -34,8 +35,13 @@
 
 #grid_table {
 	padding: 5px;
-}
+	background-image: url("../media/grid_bg.png");
 
+}
+/*#grid_bg_holder {
+
+	background-image: url("../media/grid_bg.png");
+}*/
 .row {
 	margin-bottom:-3px;
 }
@@ -49,7 +55,7 @@
 }
 
 .cell-color {
-	
+
 }
 
 .cell-edge {
@@ -61,3 +67,13 @@
 	width:25px;
 }
 
+/*------------------------------------------------------*/
+.color_option_box {
+	height: 25px;
+	width: 25px;
+}
+
+.color_group {
+	display: inline-flex;
+	flex-wrap: wrap;
+}

@@ -7,21 +7,38 @@
 <!-- BODY -------------------------------------------------------------------->
 <div id="parent">
 
+	<!-- CONTROL MENU ---------------------------------------------->
+
 	<div id="menu" class="container">
 		<h1 style="color:green">Minecraft Color</h1>
 		<label for="x_form">X:</label>
-		<input type="text" id="x_form" class=" xy_input">
+		<input type="text" id="x_form" class=" xy_input" value="35">
 		<label for="y_form">Y:</label>
-		<input type="text" id="y_form" class=" xy_input">
-		<button id="xy_set" class="" onclick="setGridSize()">Set Grid Size</button>
-		<button id="xy_set" class="" onclick="clearGrid()">Clear Grid</button>
+		<input type="text" id="y_form" class=" xy_input" value="35">
+		<button id="xy_set" class="btn btn-success btn-sm" onclick="setGridSize()">Set Grid Size</button>
+		<button id="xy_set" class="btn btn-success btn-sm" onclick="clearGrid()">Clear Grid</button>
+		<button id="xy_set" class="btn btn-success btn-sm" onclick="createScript()">Create Script</button>
 	</div>
 
+
+
+
+
+	<!-- COLOR SELECTOR ---------------------------------------------->
 	<div id="sidebar" class="container">
-		sidebar
+
+		<!-- FOOTER ---->
+		{% include 'color_selector.html' %}
+
 	</div>
 
+
+
+
+
+	<!-- DRAWING GRID ---------------------------------------------->
 	<div id="grid" class="container">
+		
 		<!-- Grid Here - set in js/grid.js -->
 	</div>
 </div>
